@@ -10,15 +10,15 @@ pipeline {
     stages{
 
         stage("build") {
-                      }
+                      
             steps {
                 echo 'building the application...'
                 echo "building version ${NEW_VERSION}"
             }
         }
-
+               
         stage("test") {
-             }
+             
             steps {
                 echo 'testing the application...'
             }
@@ -29,6 +29,7 @@ pipeline {
             steps{
                 echo 'deploying the application...'
             }
+        }
         }
         post{
           always {
@@ -42,4 +43,3 @@ pipeline {
           }
         }
     }
-}
