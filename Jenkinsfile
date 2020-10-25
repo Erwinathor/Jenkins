@@ -14,7 +14,7 @@ pipeline {
         stage("build") {
                       
             steps {
-                echo "building version ${NEW_VERSION}"
+                echo "building version ${params.VERSION} "
             }
         }
                
