@@ -22,7 +22,8 @@ pipeline {
         }
                
         stage("test") {
-                         }
+
+           steps {              
             echo 'testing the master branch'
             }
         }
