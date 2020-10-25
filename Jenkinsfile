@@ -1,5 +1,7 @@
 pipeline {
-    agent "Docker-agent"
+    agent { 
+        label "Docker-agent"
+    }
     stages {
         stage('Back-end') {
             agent {
