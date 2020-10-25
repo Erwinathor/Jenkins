@@ -1,13 +1,13 @@
 def buildApp() {
-    echo 'building the application...'
+    echo 'GROOVY building the application...'
 }
 
 def testApp() {
-    echo 'testing the application...'
+    echo 'GROOVY testing the application...'
 }
 
 def deployApp() {
-    echo 'deploying the application...'
+    echo 'GROOVY deploying the application...'
     echo "deploying version ${params.VERSION}"
 }
 
