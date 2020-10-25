@@ -31,7 +31,7 @@ pipeline {
         stage("deploy"){
 
             steps{
-              echo 'testing the master branch'
+              echo 'testing the master branch uh'
 
             }
         }
