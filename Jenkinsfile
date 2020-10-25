@@ -5,6 +5,10 @@ pipeline {
     }
     environment{
         NEW_VERSION = '1.4.0'
+        SERVER_CREDENTIALS = credentials('')
+    }
+    tools{
+        maven 'M2_HOME'
     }
 
     stages {
@@ -13,6 +17,7 @@ pipeline {
                       
             steps {
                 echo "building version ${NEW_VERSION}"
+                sh "mvn --version"
             }
         }
                
@@ -27,6 +32,7 @@ pipeline {
 
             steps{
                 echo 'deploying the application...'
+
             }
         }
     }
