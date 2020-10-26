@@ -22,8 +22,8 @@
         file:
           path: ./html
           state: directory
-          owner: jenkins
-          group: jenkins 
+          owner: "{{ ansible_user }}"
+          group: "{{ ansible_user }}" 
           mode: 0775
 
       
