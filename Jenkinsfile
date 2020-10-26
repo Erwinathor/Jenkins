@@ -1,4 +1,8 @@
 pipeline {
-    agent any
-    sta
+    agent {
+        dockerfile true
+    }
+    steps{
+        sh 'echo myCustomEnvVar = $myCustomEnvVar'
+    }
 }
