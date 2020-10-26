@@ -21,7 +21,10 @@
       - name: make dir for index.html
         file:
           path: ./html
-          state: directory 
+          state: directory
+          owner: jenkins
+          group: jenkins 
+          mode: 0775
 
       
       - name: make dir for index.html
