@@ -3,6 +3,6 @@
   <title>PHP Test</title>
  </head>
  <body>
- <?php echo '<p>Docker Pipeline Werkt!!!</p>'; ?> 
+ <?php echo '<p>COMBINED WERKT</p>'; ?> 
  </body>
 </html>
