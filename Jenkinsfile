@@ -1,23 +1,15 @@
 pipeline {
-    agent {
-        docker-compose.yml true
-    }
+    agent any
     stages{
-        stage('delete older'){
+        stage('SCM Checkout'){
             steps{
-                docker stop 
+                git 'https://github.com/Erwinwe/Jenkins/tree/dev'
             }
         }
-        stage('Example'){
+        stage('Execute Ansible'){
             steps{
-                sh 'echo myCustomEnvVar = $myCustomEnvVar'
+                sh '/usr/bin/ansible-playbook ansible.yml'
                 
             }
         }
     }
-    post {
-    success {
-      sh 'cp -rf index.php ./html/index.php'
-    }
-}
-}
