@@ -6,8 +6,12 @@ pipeline {
         stage('Example'){
             steps{
                 sh 'echo myCustomEnvVar = $myCustomEnvVar'
-                sh "cp -rf index.php ./html/index.php"
+                
             }
         }
+    }
+    post {
+    success {
+      sh "cp -rf index.php ./html/index.php"
     }
 }
