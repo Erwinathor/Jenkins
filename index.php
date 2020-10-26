@@ -3,6 +3,6 @@
   <title>PHP Test</title>
  </head>
  <body>
- <?php echo '<p>COMBINED WERKT</p>'; ?> 
+ <?php echo '<p>EN HET UPDATEN OOK</p>'; ?> 
  </body>
 </html>
