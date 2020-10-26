@@ -3,6 +3,6 @@
   <title>PHP Test</title>
  </head>
  <body>
- <?php echo '<p>DIT IS AUTOMATISCH GEBEURD DANKZIJ DE GIT POLLER werkt dit?</p>'; ?> 
+ <?php echo '<p>uhm</p>'; ?> 
  </body>
 </html>
