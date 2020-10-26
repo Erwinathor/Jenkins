@@ -12,7 +12,7 @@
         ignore_errors: yes
     
       - name: start docker compose 
-        command: docker-compose up
+        command: docker-compose -f /var/lib/jenkins/workspace/docker_compose/docker-compose.yml up -d
         ignore_errors: yes
 
       - name: copy index.html
