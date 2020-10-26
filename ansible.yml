@@ -12,13 +12,10 @@
       - name: remove stopped docker container
         command: docker-compose rm -f
         ignore_errors: yes
-
-      - name: sleep for 5 seconds and continue with play
-        wait_for: timeout=5  
     
       - name: start docker compose 
         command: docker-compose -f ./docker-compose.yml up -d
         ignore_errors: yes
 
       - name: copy index.html
-        command: cp --parents -rf index.php ./html/index.php
+        command: cp --parents -rf index.php html/index.php
