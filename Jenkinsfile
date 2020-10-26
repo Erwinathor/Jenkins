@@ -3,6 +3,11 @@ pipeline {
         docker-compose.yml true
     }
     stages{
+        stage('delete older'){
+            steps{
+                docker stop 
+            }
+        }
         stage('Example'){
             steps{
                 sh 'echo myCustomEnvVar = $myCustomEnvVar'
@@ -12,7 +17,7 @@ pipeline {
     }
     post {
     success {
-      sh "cp -rf index.php ./html/index.php"
+      sh 'cp -rf index.php ./html/index.php'
     }
 }
 }

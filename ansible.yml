@@ -1,0 +1,18 @@
+---
+    - hosts: all
+      become: true
+      tasks:
+      - name: stop if we have old docker container
+        command: docker stop docker_compose_web-server
+        ignore_errors: yes
+    
+      - name: remove stopped docker container
+        command: docker rm docker_compose_web-server
+        ignore_errors: yes
+    
+      - name: start docker compose 
+        command: docker-compose up
+        ignore_errors: yes
+
+      - name: copy index.html
+        command: cp -rf index.php ./html/index.php
