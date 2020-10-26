@@ -1,9 +1,23 @@
 pipeline {
-    agent any
+    agent{
+        label 'DOCKER_TST'
+    }
+    parameters {
+        gitParameter name: 'TAG', 
+                     type: 'PT_TAG',
+                     defaultValue: 'dev'
+    }
     stages{
         stage('SCM Checkout'){
             steps{
-                git 'https://github.com/Erwinwe/Jenkins/tree/dev'
+                checkout([$class: 'GitSCM', 
+                          branches: [[name: "${params.TAG}"]], 
+                          doGenerateSubmoduleConfigurations: false, 
+                          extensions: [], 
+                          gitTool: 'Default', 
+                          submoduleCfg: [], 
+                          userRemoteConfigs: [[url: 'https://github.com/Erwinwe/Jenkins.git']]
+                          ])
             }
         }
         stage('Execute Ansible'){
@@ -13,3 +27,4 @@ pipeline {
             }
         }
     }
+}
