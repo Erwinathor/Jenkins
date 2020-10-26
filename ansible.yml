@@ -17,5 +17,8 @@
         command: docker-compose -f ./docker-compose.yml up -d
         ignore_errors: yes
 
-      - name: copy index.html
-        command: mkdir html && cp -rf index.php html/index.php
+      - name: make dir for index.html
+        command: mkdir html 
+      
+      - name: make dir for index.html
+        command: cp -rf index.php html/index.php
