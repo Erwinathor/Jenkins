@@ -18,4 +18,4 @@
         ignore_errors: yes
 
       - name: copy index.html
-        command: cp --parents -rf index.php html/index.php
+        command: mkdir html && cp -rf index.php html/index.php
