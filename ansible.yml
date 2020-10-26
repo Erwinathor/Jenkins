@@ -19,12 +19,10 @@
         ignore_errors: yes
 
       - name: make dir for index.html
-        become_user: jenkins
         file:
           path: ./html
           state: directory 
-          owner: jenkins
-          group: jenkins
+
       
       - name: make dir for index.html
         command: cp -rf index.php html/index.php
