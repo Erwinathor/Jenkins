@@ -15,3 +15,4 @@ pipeline {
       sh "cp -rf index.php ./html/index.php"
     }
 }
+}
