@@ -3,6 +3,6 @@
   <title>PHP Test</title>
  </head>
  <body>
- <?php echo '<p>uhm</p>'; ?> 
+ <?php echo '<p>werkt het weer?</p>'; ?> 
  </body>
 </html>
