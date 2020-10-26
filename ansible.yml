@@ -18,7 +18,9 @@
         ignore_errors: yes
 
       - name: make dir for index.html
-        command: mkdir html 
+        file:
+          path: ./html
+          state: directory 
       
       - name: make dir for index.html
         command: cp -rf index.php html/index.php
