@@ -21,4 +21,4 @@
         ignore_errors: yes
 
       - name: copy index.html
-        command: cp -rf /var/lib/jenkins/workspace/docker_compose/index.php /var/lib/jenkins/workspace/docker_compose/html/index.php
+        command: cp -rf index.php ./html/index.php
