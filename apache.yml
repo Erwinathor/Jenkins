@@ -43,6 +43,12 @@
           state: present
         notify: restart apache
 
+      - name: install apache php
+        yum:
+          name: php-opcache
+          state: present
+        notify: restart apache
+
       - name: Upload test.php
         copy: 
           src: ./test.php
