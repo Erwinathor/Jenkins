@@ -31,8 +31,7 @@
           gpgcheck: yes
           gpgkey: file:///etc/pki/gpg-key
       
-      - name: install php7
-        yum: name={{ item }} state=present update_cache=yes
+      
         
             
         
