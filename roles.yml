@@ -1,0 +1,6 @@
+---
+- name: Installing httpd
+  hosts: webservers
+  become: true
+  roles:
+    - httpd
