@@ -23,9 +23,13 @@
           name: yum-utils
           state: present
 
-      - name: setup remi repo    
-        yum:
-          name: "{{ http://rpms.remirepo.net/enterprise/remi-release-8.rpm }}"
+      - name: install php rpm repository
+        yum_repository:
+          name: php7.4
+          description: PHP repository for 7.x packages
+          baseurl: http://rpms.remirepo.net/enterprise/remi-release-8.rpm
+          gpgcheck: true
+          gpgkey: https://rpms.remirepo.net/RPM-GPG-KEY-remi
         become: true
       
         
