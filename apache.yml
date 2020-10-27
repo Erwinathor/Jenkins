@@ -25,8 +25,7 @@
 
       - name: setup remi repo    
         yum:
-          name:
-          - "{{ http://rpms.remirepo.net/enterprise/remi-release-8.rpm }}"
+          name: "{{ http://rpms.remirepo.net/enterprise/remi-release-8.rpm }}"
         become: true
       
         
