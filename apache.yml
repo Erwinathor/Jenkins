@@ -27,6 +27,8 @@
         yum:
           name: http://rpms.remirepo.net/enterprise/remi-release-8.rpm
           state: present
+          gpgcheck: true
+          gpgkey: https://rpms.remirepo.net/RPM-GPG-KEY-remi
       
         
             
