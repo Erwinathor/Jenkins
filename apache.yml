@@ -24,10 +24,10 @@
           state: present
 
       - name: setup remi repo    
-        yum_repository:
-          name: "remi"
-          description: "Remi PHP repo"
-          baseurl: "http://rpms.remirepo.net/enterprise/remi-release-8.rpm"
+        yum:
+          name:
+          - "{{ http://rpms.remirepo.net/enterprise/remi-release-8.rpm }}"
+        become: true
       
         
             
