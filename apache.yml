@@ -23,18 +23,11 @@
           name: yum-utils
           state: present
 
-      - name: Install PHP
-        yum: name={{ item }} state=present enablerepo=epel
-        with_items:
-         - php71u-cli
-         - php71u-common
-         - php71u-fpm
-         - php71u-fpm-nginx
-         - php71u-json
-         - php71u-mysqlnd
-         - php71u-opcache
-         - php71fu-pdo
-      
+      - name: setup remi repo    
+        yum_repository:
+          name: "remi"
+          description: "Remi PHP repo"
+          baseurl: "http://rpms.remirepo.net/enterprise/remi-release-8.rpm"
       
         
             
