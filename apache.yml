@@ -26,7 +26,7 @@
       - name: Import a key from a url
         rpm_key:
           state: present
-          key: https://rpms.remirepo.net/RPM-GPG-KEY-remi
+          key: https://rpms.remirepo.net/RPM-GPG-KEY-remi2018
 
       - name: install php rpm repository
         yum:
