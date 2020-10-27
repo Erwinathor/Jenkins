@@ -24,13 +24,9 @@
           state: present
 
       - name: install php rpm repository
-        yum_repository:
-          name: remi-release-8.rpm
-          description: PHP repository for 7.x packages
-          baseurl: http://rpms.remirepo.net/enterprise/remi-release-8.rpm
-          gpgcheck: true
-          gpgkey: https://rpms.remirepo.net/RPM-GPG-KEY-remi
-        become: true
+        yum:
+          name: http://rpms.remirepo.net/enterprise/remi-release-8.rpm
+          state: present
       
         
             
