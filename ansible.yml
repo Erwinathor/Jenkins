@@ -3,6 +3,18 @@
       connection: local 
       become_user: jenkins
       tasks:
+        
+      - name: make dir for index.html
+        file:
+          path: ./html
+          state: directory
+          owner: jenkins
+          group: jenkins 
+          mode: 0775
+      
+      - name: make dir for index.html
+        command: cp -rf index.php html/index.php
+
       - name: stop if we have old docker container
         command: docker-compose stop
         ignore_errors: yes
@@ -18,14 +30,3 @@
         command: docker-compose -f ./docker-compose.yml up -d
         ignore_errors: yes
 
-      - name: make dir for index.html
-        file:
-          path: ./html
-          state: directory
-          owner: "{{ ansible_user }}"
-          group: "{{ ansible_user }}" 
-          mode: 0775
-
-      
-      - name: make dir for index.html
-        command: cp -rf index.php html/index.php
