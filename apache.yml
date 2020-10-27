@@ -9,6 +9,6 @@
         state: present
     - name: Ensure apache is running
     service:
-        name: apache2
-        state: started
-        enabled: yes
+      name: apache2
+      state: started
+      enabled: yes
