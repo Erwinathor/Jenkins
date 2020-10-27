@@ -1,6 +1,11 @@
 ---
     - name: This sets up an httpd webserver
       hosts: webservers
+      
+      handlers:
+        - name: Restart apache
+          service: name=httpd state=restarted
+      
       tasks:
       - name: Install apache packages 
         yum:
@@ -37,6 +42,8 @@
         yum:
           name: php
           state: present
+        notify: restart apache
+
 
 
     
