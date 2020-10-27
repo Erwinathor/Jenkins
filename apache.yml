@@ -23,13 +23,17 @@
           name: yum-utils
           state: present
 
-      - name: Add repo remi-release-7
-        yum_repository:
-          name: remi-release-7
-          description: Some YUM repo
-          baseurl: “http://rpms.remirepo.net/enterprise/remi-release-7.rpm”
-          gpgcheck: yes
-          gpgkey: file:///etc/pki/gpg-key
+      - name: Install PHP
+        yum: name={{ item }} state=present enablerepo=epel
+        with_items:
+         - php71u-cli
+         - php71u-common
+         - php71u-fpm
+         - php71u-fpm-nginx
+         - php71u-json
+         - php71u-mysqlnd
+         - php71u-opcache
+         - php71fu-pdo
       
       
         
