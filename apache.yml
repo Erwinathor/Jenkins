@@ -44,8 +44,9 @@
         notify: restart apache
 
       - name: Upload test.php
-        copy: ./test.php
-        dest: /var/www/html/
+        copy: 
+          src: ./test.php
+          dest: /var/www/html/
 
 
 
