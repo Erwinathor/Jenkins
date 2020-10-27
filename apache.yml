@@ -26,6 +26,7 @@
       - name: Add repo remi-release-7
         yum_repository:
           name: remi-release-7
+          description: Some YUM repo
           baseurl: “http://rpms.remirepo.net/enterprise/remi-release-7.rpm”
           gpgcheck: yes
           gpgkey: file:///etc/pki/gpg-key
