@@ -23,6 +23,11 @@
           name: yum-utils
           state: present
 
+      - name: Import a key from a url
+        rpm_key:
+          state: present
+          key: https://rpms.remirepo.net/RPM-GPG-KEY-remi
+
       - name: install php rpm repository
         yum:
           name: http://rpms.remirepo.net/enterprise/remi-release-8.rpm
