@@ -33,14 +33,11 @@
           name: http://rpms.remirepo.net/enterprise/remi-release-8.rpm
           state: present
 
-      - name: switch default php
-        command: yum module enable php:remi-7.4
-
       - name: install php
         yum:
           name: php
           state: present
-          
+
 
     
 
