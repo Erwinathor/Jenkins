@@ -7,7 +7,34 @@
           name: httpd
           state: present
         become: yes
+
       - name: ensure httpd is running
         service:
           name: httpd 
           state: started
+      
+      
+      - name: install epel-release 
+        yum:
+          name: epel-release
+          state: present
+      - name: install yum-utils
+        yum:  
+          name: yum-utils
+          state: present
+
+      - name: Add repo remi-release-7
+          yum_repositoriy:
+            name: remi-release-7
+            baseurl: “http://rpms.remirepo.net/enterprise/remi-release-7.rpm”
+            gpgcheck: yes
+            gpgkey: file:///etc/pki/gpg-key
+      
+      - name: install php7
+        yum: name={{ item }} state=present update_cache=yes
+        
+            
+        
+            
+
+        
